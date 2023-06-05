@@ -1,0 +1,123 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+Perfil - {{ usuario.username }}
+{% endblock %}
+
+{% block body %}
+<body>
+{% include "navbar.html" %}
+<div class="container">
+
+    <div class="msgOla">
+        <h2>Olá, {{ usuario.username }} veja os dados dos alunos egressos:</h2>
+    </div>
+
+    <div class="informacoesEgressos">
+        <h2>Egressos cadastrados:</h2>
+        <table class="listaEgressos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>RA</th>
+                    <th>Celular</th>
+                    <th>E-mail</th>
+                    <th>Curso</th>
+                    <th>Ano de conclusão</th>
+                    <th>Trabalha na área</th>
+                    <th>Curso facilitou</th>
+                    <th>Estimulo profissional</th>
+                    <th>Promoveu conhecimento</th>
+                    <th>Pós-graduação</th>
+                    <th>Pós-graduação Resposta</th>
+                    <th>Interesse em pós-graduação</th>
+                    <th>Segunda graduação</th>
+                    <th>Segunda graduação Resposta</th>
+                    <th>Importância</th>
+                    <th>Recomenda</th>
+                    <th>Receber informações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for e in egressos %}
+                <tr>
+                    <td>{{ e.nome }}</td>
+                    <td>{{ e.cpf }}</td>
+                    <td>{{ e.ra }}</td>
+                    <td>{{ e.celular }}</td>
+                    <td>{{ e.email }}</td>
+                    <td>{{ e.curso }}</td>
+                    <td>{{ e.ano_conclusao }}</td>
+                    <td>{{ e.trabalha_na_area }}</td>
+                    <td>{{ e.curso_facilitou }}</td>
+                    <td>{{ e.estimulo_profissional }}</td>
+                    <td>{{ e.promoveu_conhecimento }}</td>
+                    <td>{{ e.pos_graduacao }}</td>
+                    <td>{{ e.pos_graduacao_resposta }}</td>
+                    <td>{{ e.interesse_pos_graduacao }}</td>
+                    <td>{{ e.segunda_graduacao }}</td>
+                    <td>{{ e.segunda_graduacao_resposta }}</td>
+                    <td>{{ e.importancia }}</td>
+                    <td>{{ e.recomenda }}</td>
+                    <td>{{ e.receber_informacoes }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+<!--
+{% if form %}
+
+
+      <form class="bloco-add-img" method="POST" enctype="multipart/form-data">
+          {{ form.csrf_token }}
+
+
+        <div class="bloco-arquivo">
+            <label for="foto" class="botao-arquivo">
+              Escolher arquivo
+                {{ form.foto(class="input-arquivo", id="foto") }}
+            </label>
+            <span id="imagem-arquivo" class=""></span>
+          </div>
+
+          {{ form.botao_confirmacao(class="botao-login") }}
+        </form>
+
+{% else %}
+
+
+
+<div class="bloco-add-img">
+    <h2>{{ usuario.username }} - Ver Perfil</h2>
+</div>
+{% endif %}
+
+
+
+<div class="conteudo">
+{% for foto in usuario.fotos %}
+    <div class="bloco-imagem">
+      <img src="{{ url_for('static', filename='fotos_posts/{}'.format(foto.imagem)) }}" />
+    </div>
+{% endfor %}
+    </div>
+
+</div>
+
+  <script>
+      let input = document.getElementById("foto");
+      let imagemArquivo = document.getElementById("imagem-arquivo");
+
+      input.addEventListener("change", () => {
+        let inputImagem = document.querySelector("input[type=file]").files[0];
+
+        imagemArquivo.classList.add("visivel");
+        imagemArquivo.innerText = inputImagem.name;
+      });
+    </script>
+-->
+</body>
+{% endblock %}

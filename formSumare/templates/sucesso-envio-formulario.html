@@ -1,0 +1,951 @@
+{% extends 'homepage.html' %}
+
+{% block head %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources/assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources/assets/css/flickity.css') }}">
+
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-KJPFNGH')
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-MQ89XWQ')
+    </script>
+
+{% endblock %}
+
+{% block body %}
+
+<body style="background-image: url({{ url_for('static', filename='resources/assets/img/back.webp') }});   background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+      <div id="home"></div>
+    <header class="header">
+      <div class="alert-error"></div>
+      <div class="nav-1">
+        <div class="social">
+          <div class="social-itens">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/atend.svg') }}"
+              alt="Fale com a faculdade Sumaré"
+              class="img-1"
+              title="Fale Conosco"
+            />
+            <a href="https://sumare.edu.br/atendimento/" tabindex="1" style="text-decoration: none; color: #fff;"
+              >Atendimento</a
+            >
+          </div>
+          <div class="social-itens">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/pole-icon.svg') }}"
+              alt="Unidades da faculdade Sumaré"
+              class="img-1"
+              title="Nossos Polos"
+            />
+            <a href="https://sumare.edu.br/polos.html" tabindex="2" style="text-decoration: none; color: #fff;">Polos</a>
+          </div>
+          <div class="social-itens" id="myButtonCredenciamento">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/icone_credenciamento.svg') }}"
+              class="lazy"
+              alt="Unidades da faculdade Sumaré"
+              class="img-1"
+              title="Credenciamento MEC"
+            />
+            <span tabindex="2">Credenciamento MEC</span>
+          </div>
+          <div class="redes-sociais">
+            <a
+              href="https://www.linkedin.com/school/sumareoficial/"
+              class="social-itens"
+              tabindex="3"
+              ><img
+                src="{{ url_for('static', filename='resources/assets/icons/linkedin-icon.svg') }}"
+                alt="Linkedin da Faculdade Sumaré"
+                title="Linkedin da Sumaré"
+            /></a>
+            <a
+              href="https://www.facebook.com/sumareoficial/"
+              class="social-itens"
+              tabindex="4"
+              ><img
+                src="{{ url_for('static', filename='resources/assets/icons/face-icon.svg') }}"
+                alt="Facebook da Faculdade Sumaré"
+                title="Facebook da Sumaré"
+            /></a>
+            <a
+              href="https://www.instagram.com/sumareoficial/"
+              class="social-itens"
+              tabindex="5"
+              ><img
+                src="{{ url_for('static', filename='resources/assets/icons/insta-icon.svg') }}"
+                class="lazy"
+                alt="Instagram da Faculdade Sumaré"
+                title="Instagram da Sumaré"
+            /></a>
+          </div>
+        </div>
+
+        <div class="login">
+          <div class="login-itens">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/teacher-icon.svg') }}"
+              alt="Professores da Sumaré"
+              title="Docente online"
+            />
+            <a href="https://ngdonline.sumare.edu.br/" tabindex="6" style="text-decoration: none; color: #fff;">Docentes</a>
+          </div>
+          <div class="login-itens">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/cont-icon.svg') }}"
+              class="lazy"
+              alt="Colaborador online"
+              title="Area do colaborador"
+            />
+            <a
+              href="http://www3.colabsonline.sumare.edu.br/account/"
+              tabindex="7" style="text-decoration: none; color: #fff;"
+              >Colaboradores</a
+            >
+          </div>
+          <div class="login-itens itenEAD">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/ead-icon.svg') }}"
+              alt="Ambiente virtual de aprendizagem"
+              title="EAD-AVA"
+            />
+            <a href="https://isdes.mrooms.net/" tabindex="8" style="text-decoration: none; color: #fff;">EAD</a>
+          </div>
+          <div class="login-itens">
+            <img
+              src="{{ url_for('static', filename='resources/assets/icons/student-icon.svg') }}"
+              alt="Icone de Aluno"
+              title="Area do aluno"
+            />
+            <a href="https://ngaonline.sumare.edu.br/" tabindex="9" style="text-decoration: none; color: #fff;"
+              >Aluno Online</a
+            >
+          </div>
+        </div>
+      </div>
+      <nav class="navbar">
+        <a href="https://sumare.edu.br/#include" tabindex="10" class="nav-logo"
+          ><img
+            src="{{ url_for('static', filename='resources/assets/img/logo-sumare.svg') }}"
+            alt="Logo Faculdade Sumare"
+            title="Sumaré Centro Universitário"
+        /></a>
+        <ul class="nav-menu">
+          <li class="nav-item drop-graduacao" onclick="drop()" tabindex="11">
+            <span id="graduacao" class="nav-item-menu mais-grad"
+              >Graduação</span
+            >
+            <ul id="submenuGraduacao" class="nav-item-submenu">
+              <li class="nav-submenu-item">
+                <a
+                  href="https://sumare.edu.br/Graduacao/EAD"
+                  class="nav-submenu-link"
+                  tabindex="12"
+                  >EAD</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="https://sumare.edu.br/Graduacao/Hibrido"
+                  class="nav-submenu-link"
+                  tabindex="13"
+                  >Híbrido</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="https://sumare.edu.br/Graduacao/Presencial"
+                  class="nav-submenu-link"
+                  tabindex="14"
+                  >Presencial</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item drop-pos" onclick="drop2()" tabindex="11">
+            <span id="posGraduacao" class="nav-item-menu-pos mais-pos"
+              >Pós-Graduação</span
+            >
+            <ul id="submenuPosGraduacao" class="nav-item-submenu">
+              <li class="nav-submenu-item">
+                <a
+                  href="https://sumare.edu.br/posEad/"
+                  class="nav-submenu-link"
+                  tabindex="12"
+                  >EAD</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="https://sumare.edu.br/posHibrido/"
+                  class="nav-submenu-link"
+                  tabindex="13"
+                  >Híbrido</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="https://sumare.edu.br/posAoVivo"
+                  class="nav-submenu-link"
+                  tabindex="13"
+                  >Online Ao vivo</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://sumare.edu.br/transferencia/"
+              class="nav-link"
+              tabindex="16"
+              >Transferência</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://sumare.edu.br/segunda-graduacao/"
+              class="nav-link"
+              tabindex="17"
+              >2ª Graduação</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://sumare.edu.br/seg-licenciatura.html"
+              class="nav-link"
+              tabindex="18"
+              aria-disabled="true"
+              >2ª Licenciatura</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://sumare.edu.br/reativacao/"
+              class="nav-link"
+              tabindex="19"
+              >Reativação</a
+            >
+          </li>
+          <!-- Parte do login -->
+          <li class="nav-item drop-login" tabindex="">
+            <span class="nav-item-menu-login mais-login" onclick="drop1()"
+              >Login</span
+            >
+            <ul id="submenulogin" class="nav-item-submenu">
+              <li class="nav-submenu-item">
+                <a
+                  href="https://ngdonline.sumare.edu.br/"
+                  class="nav-submenu-link"
+                  tabindex="12"
+                  >Docentes</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="http://www3.colabsonline.sumare.edu.br/account/"
+                  class="nav-submenu-link"
+                  tabindex="13"
+                  >Colaboradores</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="https://isdes.mrooms.net/"
+                  class="nav-submenu-link"
+                  tabindex="14"
+                  >EAD</a
+                >
+              </li>
+              <li class="nav-submenu-item">
+                <a
+                  href="https://ngaonline.sumare.edu.br/"
+                  class="nav-submenu-link"
+                  tabindex="14"
+                  >Aluno online</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- <div class="active-sub-menu"></div> -->
+          <li class="nav-item">
+            <ul class="social-midias">
+              <li>
+                <a
+                  href="https://www.linkedin.com/school/sumareoficial/"
+                  class="linkedin"
+                  tabindex="20"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/sumareoficial/"
+                  class="facebook"
+                  tabindex="21"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/sumareoficial/"
+                  class="instagram"
+                  tabindex="22"
+                ></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="option" onclick="closeOption()"></div>
+      </nav>
+    </header>
+
+    <div class="modal-backgroundCred"></div>
+      <div id="myModalCredenciamento" class="modalCredenciamento">
+        <div class="contentCredenciamento">
+          <div class="titleModalCred">
+            <span class="closeModalCred">x</span>
+          </div>
+          <div class="conteudoCred">
+            <div class="qrCredenciamento">
+              <img
+                      style="max-width: fit-content;"
+                src="{{ url_for('static', filename='resources/assets/img/qrCodeCredenciamento.webp') }}"
+                class="lazy"
+                alt="qrCode credenciamento MEC"
+              />
+            </div>
+            <div class="infoCredenciamento">
+              <p>Consulte aqui o cadastro da instituição no sistema e-MEC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal Credenciamento MEC FIM -->
+
+    <div class="container" style="margin-top: 12rem;">
+        <h2 class="info-form-h1">Obrigado!</h2>
+        <p>Agradecemos por ter dedicado seu tempo para preencher nossa pesquisa. Seu feedback é fundamental para que possamos aprimorar nossos serviços e processos, visando sempre oferecer uma formação de excelência aos nossos alunos. Sua opinião é muito valiosa para nós e será utilizada para tornar o Centro Universitário Sumaré ainda melhor. Obrigado por sua colaboração!</p>
+      <div class="row">
+        <div class="col">
+        </div>
+      </div>
+    </div>
+
+    <div class="box-cookies hide">
+        <p class="msg-cookies">
+          Utilizamos cookies para analisar e personalizar conteúdos e anúncios
+          em nossa plataforma e em serviços de terceiros. Ao navegar no site,
+          você nos autoriza a coletar e usar essas informações. Você pode
+          alterar isso a qualquer tempo.
+        </p>
+        <div class="options">
+          <a href="#" class="politica">Política de Privacidade</a>
+          <div class="btn-cookies">Ok, Entendi</div>
+        </div>
+      </div>
+
+      <div class="texto-lateral hide-texto">
+        <div class="textos">
+          <p>
+            “Cookies” são identificadores que transferimos para o seu navegador
+            ou dispositivo. As principais categorias e finalidades dos cookies
+            utilizados pela Sumaré são:
+          </p>
+          <h4>Cookies obrigatórios</h4>
+          <p>
+            Estes cookies são necessários para garantir o funcionamento do
+            website enquanto você navega. Estes recursos incluem a gestão da
+            sessão, por exemplo.
+          </p>
+          <h4>Cookies Funcionais</h4>
+          <p>
+            Os Cookies Funcionais permitem lembrar as escolhas que você faz
+            sobre o tipo de experiência que deseja em nossos websites e melhorar
+            a sua experiência e usabilidade. Por exemplo, é necessário um cookie
+            funcional para lembrar qual idioma você prefere.
+          </p>
+          <h4>Cookies de Analytics</h4>
+          <p>
+            Cookies de análise e desempenho ajudam a coletar informações,
+            monitorar eventos e analisar o tráfego em páginas, além de
+            identificar a origem e entender o comportamento dos visitantes. As
+            informações coletadas por esses cookies são utilizadas
+            principalmente de forma agregada, para nos auxiliar na análise de
+            resultados de performance dos websites da Sumaré.
+          </p>
+          <h4>Cookies de Monitoramento</h4>
+          <p>
+            Cookies de monitoramento são utilizados para rastrear o
+            comportamento online de uma pessoa. Essas informações nos ajudam a
+            entender as suas preferências e os conteúdos que você mais gosta em
+            nossos websites, e podem ser usadas para estratégias de marketing
+            mais personalizadas de acordo com os seus interesses.
+          </p>
+        </div>
+        <div class="buttons">
+          <div class="btn-limpar">Limpar Cookies</div>
+          <div class="btn-accept">Ok, Entendi</div>
+        </div>
+      </div>
+
+      <section class="s-polos">
+        <div class="container">
+          <div class="titulo-polos">
+            <img style="width: 3%;"
+              src="{{ url_for('static', filename='resources/assets/icons/polos.svg') }}"
+              alt="Centro Universitário SumaréIcone Polos"
+              width="35"
+              height="36"
+            />
+            <h2 style="white-space: nowrap;">Nossos Polos</h2>
+          </div>
+          <!-- Flickity HTML init -->
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/sumare.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Matriz - SP"
+                />
+                <h4>Matriz - SP</h4>
+                <p>
+                  Av. Dr. Arnaldo, 1753, Sumaré - São Paulo/SP, CEP 01255-000.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/saoBernado.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Matriz - SP"
+                />
+                <h4>São Bernardo do Campo - SP</h4>
+                <p>
+                  Av. José Versolato 101, São Bernardo do Campo/SP, CEP
+                  09750-730.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/recife.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Recife - RE"
+                />
+                <h4>Recife - PE</h4>
+                <p>Rua Padre Carapuceiro, 858, Recife/PE, CEP 51020-280.</p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/rj.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário SumaréPolo Rio de Janeiro - RJ"
+                />
+                <h4>Rio de Janeiro - RJ</h4>
+                <p>
+                  Rua da Quitanda, 86, Centro, Rio de Janeiro/RJ, CEP 20091-005.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/salvador.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo salvador - BA"
+                />
+                <h4>Salvador - BA</h4>
+                <p>
+                  Av. Tancredo Neves, 620, 33º andar, Caminho das Árvores -
+                  Salvador/BA, CEP 41819-900.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/bh.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário SumaréPolo Belo Horizonte - MG"
+                />
+                <h4>Belo Horizonte - MG</h4>
+                <p>
+                  Rua Paraíba, 550, 8º e 9º andares, Savassi - Belo
+                  Horizonte/MG, CEP 30130140.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/brasilia.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Brasília - DF"
+                />
+                <h4>Brasília - DF</h4>
+                <p>
+                  SBN Qd 01 Bloco F, 17º andar, Ed. Palácio da Agricultura –
+                  Brasília/DF, CEP 70040-908.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/curitiba.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Curitiba - PR"
+                />
+                <h4>Curitiba - PR</h4>
+                <p>
+                  Av. Pasteur, 463, 13º andar, Batel - Curitiba/PR, CEP
+                  80250080.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/portoAlegre.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Porto Alegre - RS"
+                />
+                <h4>Porto Alegre - RS</h4>
+                <p>Av. Carlos Gomes, 700, Porto Alegre/RS, CEP 90480-000.</p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/vitoria.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Vitória - ES"
+                />
+                <h4>Vitória - ES</h4>
+                <p>
+                  Rua José Alexandre Buaiz, 300, 20º andar, Enseada do Suá -
+                  Vitória/ES, CEP 29050-545.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/barueri.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Barueri - SP"
+                />
+                <h4>Barueri - SP</h4>
+                <p>
+                  Rua Dr. Marcos Penteado Ulhoa de Rodrigues, 939, 8° andar Ed.
+                  Jacarandá - Barueri/SP, CEP 06460-040.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/campinas.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Campinas - SP"
+                />
+                <h4>Campinas - SP</h4>
+                <p>
+                  Av. Dr. José Bonifácio Coutinho Nogueira, 150, Térreo, Jardim
+                  Madalena - Campinas/SP, CEP 13091-611.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/guarulhos.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário SumaréPolo Guarulhos - SP"
+                />
+                <h4>Guarulhos - SP</h4>
+                <p>
+                  Av. Sete de Setembro, 1450, Vila Galvão - Guarulhos/SP, CEP
+                  07064-002.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/fortaleza.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário SumaréPolo Fortaleza - CE"
+                />
+                <h4>Fortaleza - CE</h4>
+                <p>
+                  Av. Dom Luís, 807, 20º e 21º andar, Meireles - Fortaleza/CE,
+                  CEP 60160-230.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/polo-Barra-Funda-att.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Barra Funda - SP"
+                />
+                <h4>Barra Funda - SP</h4>
+                <p>
+                  Av. Marquês de São Vicente, 405, Térreo Loja 5 – Barra
+                  Funda/SP, CEP 01139-001.
+                </p>
+              </div>
+            </div>
+            <div class="gallery-cell">
+              <div class="card-polo">
+                <img
+                  src="{{ url_for('static', filename='resources/assets/img/Polo-Santo-Amaro-Borba-Gato-att.webp') }}"
+                  class="lazy"
+                  alt="Centro Universitário Sumaré Polo Santo Amaro - SP"
+                />
+                <h4>Santo Amaro - SP</h4>
+                <p>
+                  Av. Adolfo Pinheiro, 384, loja 40 - Santo Amaro, São Paulo -
+                  SP, 04734-000
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s-dentro">
+        <div class="container">
+          <div class="email-form">
+            <div class="newsletter">
+              <h2>ATENDIMENTO DIGITAL</h2>
+              <p>Atendimento 100% digital.</p>
+              <form action="" method="">
+                <a href="https://sumare.edu.br/atendimento/" class="btn">
+                  Clique Aqui!
+                </a>
+              </form>
+            </div>
+            <div class="newsletter">
+              <h2>ATENDIMENTO PRESENCIAL</h2>
+              <p>Horário de atendimento:</p>
+              <p>De segunda a sexta-feira, das 10:00hrs às 17:00hrs</p>
+              <form action="" method="">
+                <a
+                  href="https://www.google.com/maps/place/Rua+Am%C3%A1lia+de+Noronha,+130+-+Pinheiros,+S%C3%A3o+Paulo+-+SP,+05410-010/@-23.5510293,-46.6794799,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce578e3a469843:0x418a4a09ffd15fae!8m2!3d-23.5510293!4d-46.6794799!16s%2Fg%2F11cskfvk99?coh=164777&entry=tt"
+                  target="_blank"
+                  class="atendimento-presencial"
+                >
+                  Rua Amália de Noronha, 130, Pinheiros, São Paulo SP, CEP:
+                  05410-010
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer>
+      <div class="s-footer">
+        <div class="container">
+          <div class="social-media">
+            <p>Nossas Redes:</p>
+            <div class="icons">
+              <a href="https://www.linkedin.com/school/sumareoficial/"
+                ><img
+                  src="{{ url_for('static', filename='resources/assets/icons/linkedin-icon.svg') }}"
+                  alt="Logo do Linkedin"
+              /></a>
+              <a href="https://www.facebook.com/sumareoficial/"
+                ><img
+                  src="{{ url_for('static', filename='resources/assets/icons/face-icon.svg') }}"
+                  alt="Logo do Facebook"
+              /></a>
+              <a href="https://www.instagram.com/sumareoficial/"
+                ><img
+                  src="{{ url_for('static', filename='resources/assets/icons/insta-icon.svg') }}"
+                  class="lazy"
+                  alt="Logo do Instagram"
+              /></a>
+            </div>
+          </div>
+          <div class="colouns">
+            <div class="coloun">
+              <div class="coloun-titulo-1 icon" onclick="dropCard1()">
+                <h2>Sobre Sumaré</h2>
+              </div>
+              <div class="coloun-texto-1">
+                <ul>
+                  <li>
+                    <a
+                      href="https://sumare.edu.br/instituicao.html"
+                      class="text" style="text-decoration: none; color: #fff;"
+                      >A Instituição</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sumare.edu.br/cpa.html" class="text" style="text-decoration: none; color: #fff;"
+                      >CPA</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sumare.edu.br/ouvidoria.html" class="text" style="text-decoration: none; color: #fff;"
+                      >Ouvidoria</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sumare.edu.br/iniciacao.html" class="text" style="text-decoration: none; color: #fff;"
+                      >Iniciação Científica</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="coloun">
+              <div class="coloun-titulo-2 icon" onclick="dropCard2()">
+                <h2>Vestibular</h2>
+              </div>
+              <div class="coloun-texto-2">
+                <ul>
+                  <li>
+                    <a
+                      href="https://sumare.edu.br/Arquivos/edital/Edital%202022.pdf" style="text-decoration: none; color: #fff;"
+                      >Editais</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sumare.edu.br/prouni.html" style="text-decoration: none; color: #fff;">Prouni</a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://sumare.edu.br/Arquivos/regulamentos/2020/PROMO%C3%87%C3%83O%20CONCLUINTES%202020-2%20E%20REMATR%C3%8DCULAS%202021-1.pdf"
+                       style="text-decoration: none; color: #fff;">Regulamentos</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sumare.edu.br/trote.html" style="text-decoration: none; color: #fff;"
+                      >Trote Solidário</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="coloun">
+              <div class="coloun-titulo-3 icon" onclick="dropCard3()">
+                <h2>+ Sumaré</h2>
+              </div>
+              <div class="coloun-texto-3">
+                <ul>
+                  <li>
+                    <a href="https://sumare.edu.br/diplomas.html" style="text-decoration: none; color: #fff;"
+                      >Consulta de Diploma</a
+                    >
+                  </li>
+                  <li><a href="#" style="text-decoration: none; color: #fff;">Validador de Certificado</a></li>
+                  <li>
+                    <a
+                      href="https://sumare.edu.br/atividades-complementares.html" style="text-decoration: none; color: #fff;"
+                      >Atividades Complementares</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sumare.edu.br/biblioteca-nova.html" style="text-decoration: none; color: #fff;"
+                      >Biblioteca Virtual</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copy">
+            <a href="#home">voltar ao topo ↑</a>
+
+            <p>Copyright &copy; 2000-2023 | Sumaré Centro Universitário</p>
+          </div>
+        </div>
+
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="{{ url_for('static', filename='resources/assets/js/animation.js') }}"></script>
+    <script src="{{ url_for('static', filename='resources/assets/js/slick.js') }}"></script>
+    <script src="{{ url_for('static', filename='resources/assets/js/flickity.js') }}"></script>
+    <script src="{{ url_for('static', filename='resources/assets/js/jquery.js') }}"></script>
+
+    <script>
+      //fechando modal
+      $('.closeModalCred').click(function () {
+        $('.modal-backgroundCred').fadeOut()
+        $('#myModalCredenciamento').fadeOut()
+        $('body').css('overflow', 'auto')
+        console.log('fecha')
+      })
+      $('#myButtonCredenciamento').click(function () {
+        $('.modal-backgroundCred').fadeIn()
+        $('#myModalCredenciamento').fadeIn()
+        $('body').css('overflow', 'hidden')
+        console.log('teste')
+      })
+      $('.modal-backgroundCred').click(function () {
+        $('.modal-backgroundCred').fadeOut()
+        $('#myModalCredenciamento').fadeOut()
+        $('body').css('overflow', 'auto')
+      })
+    </script>
+
+    <script>
+      $('.center').slick({
+        centerMode: true,
+        centerPadding: '40rem',
+        slidesToShow: 1,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1184,
+            settings: {
+              arrows: true,
+              centerMode: true,
+              centerPadding: '35rem',
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 1060,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '20rem',
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 891,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '10rem',
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '0',
+              slidesToShow: 1
+            }
+          }
+        ]
+      })
+
+      $('.fade').slick({
+        arrows: false,
+        dots: true,
+        infinite: true,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        cssEase: 'linear'
+      })
+
+      localStorage.setItem('sumarePopup', 'accept')
+
+      // var modalback = $('.modal-background')
+
+      $('.modal-background').on('click', function teste() {
+        $('.popup').css('opacity', '0')
+        setTimeout(() => {
+          $('.popup').css('display', 'none')
+        }, 1000)
+        $('.modal-background').fadeOut()
+      })
+
+      document.querySelector('.close').addEventListener('click', function () {
+        // $('.modal-background').css('display', 'none');
+        $('.modal-background').fadeOut()
+        // $('.popup').css('opacity', '0');
+        setTimeout(() => {
+          $('.popup').css('display', 'none')
+        }, 1000)
+      })
+
+      function openModal() {
+        $('.modal-background').fadeIn()
+        $('.popup').css('display', 'flex')
+        setTimeout(() => {
+          $('.popup').css('opacity', '1')
+        }, 300)
+      }
+    </script>
+
+    <!-- Incluindo o script do Cloudfront Loader -->
+    <script
+      type="text/javascript"
+      async
+      src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/56de2701-1f9a-45bd-8378-70b3fbd96864-loader.js"
+    ></script>
+</body>
+{% endblock %}
